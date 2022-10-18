@@ -30,4 +30,16 @@ class UnitOfMeasureRepositoryIT {
         Optional<UnitOfMeasure> uomOptional = unitOfMeasureRepository.findByDescription("Cup");
         assertEquals("Cup", uomOptional.get().getDescription());
     }
+
+    @Test
+    void findByDescriptionDash() {
+        Optional<UnitOfMeasure> uomOptional = unitOfMeasureRepository.findByDescription("Dash");
+        assertEquals("Dash", uomOptional.get().getDescription());
+    }
+
+    @Test
+    void findByDescriptionEach() {
+        Optional<UnitOfMeasure> uomOptional = unitOfMeasureRepository.findByDescription("Each");
+        assertEquals("Each", uomOptional.get().getDescription());
+    }
 }

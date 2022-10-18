@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
-class CategoryRepositoryTest {
+class CategoryRepositoryIT {
 
     @Autowired
     CategoryRepository categoryRepository;
@@ -28,6 +28,12 @@ class CategoryRepositoryTest {
     void findByDescriptionItalian() {
         Optional<Category> categoryOptional = categoryRepository.findByDescription("Italian");
         assertEquals("Italian", categoryOptional.get().getDescription());
+    }
+
+    @Test
+    void findByDescriptionMexican() {
+        Optional<Category> categoryOptional = categoryRepository.findByDescription("Mexican");
+        assertEquals("Mexican", categoryOptional.get().getDescription());
     }
 
 }
